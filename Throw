@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>错误throw</title>
+
+<script>
+function myFunction(){
+	try {
+		var x=document.getElementById("demo").value;
+		if(x=="")		throw "Empty value";
+		if(isNaN(x))	throw "Not a Number";
+		if(x>30)		throw "Too large";
+		if(x<10)		throw "Too small";
+	}
+	catch(err) {
+		var y=document.getElementById("mess");
+		y.innerHTML="Exception: " + err + "!";
+	}
+}
+</script>
+</head>
+<body>
+
+<h1>My first JavaScript</h1>
+<p>请输入一个10到30之间的数字：</p>
+<input id="demo" type="text">
+<button type="button" onclick="myFunction()">输入测试</button>
+<p id="mess"></p>
+
+</body>
+</html>
